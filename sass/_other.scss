@@ -2,7 +2,7 @@ body{  margin: 0; }
 
 .black { font-weight: 900;}
 .bold { font-weight: 700;}
-.current-themes { border-bottom: 4px solid;}
+.current-theme { border-bottom: 4px solid;}
 
 .invert {
     background-color: rgba(var(--text-color),1);
@@ -17,6 +17,7 @@ body{  margin: 0; }
     &:hoveer {
         transform: rotate(180deg);
     }
+   
 }
 
 header,h1,h2,h3,h4,h5,h6, input {
@@ -49,7 +50,7 @@ body {
     margin: 0;
     cursor: default;
     min-height: 100vh;
-    display: flex;
+    display: none;
     @media (max-width: 1100px){
         flex-direction: column;
     }

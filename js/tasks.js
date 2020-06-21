@@ -10,7 +10,7 @@ function Task(title) {
 
 function CompletedTask(title) {
     this.title = title;
-    this.completedData = getCurrentDate();
+    this.completedDate = getCurrentDate();
 }
 
 window.onload = function() {
@@ -18,7 +18,7 @@ window.onload = function() {
 
     req.onsuccess = function() {
         database =req.result;
-    //    onLoad();
+           onLoad();
     }
 
     req.onerror = function(event) {
@@ -88,7 +88,7 @@ function deleteTask(store, id, success, error = defaultError){
 }
 
 function deleteALlTasks(store,success, error = defaultError){
-    success = success || function() {};
+    success = success || function() { console.log("Deleted All tasks")};
     let transaction = database.transaction([store], "readwrite");
     let objectStore = transaction.objectStore(store);
     let request = objectStore.clear();
